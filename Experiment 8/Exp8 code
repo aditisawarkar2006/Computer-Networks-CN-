@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main()
+{
+    int frames, window, i, j;
+
+    printf("Enter total number of frames: ");
+    scanf("%d", &frames);
+
+    printf("Enter window size: ");
+    scanf("%d", &window);
+
+    printf("\nSliding Window Protocol\n\n");
+
+    for (i = 1; i <= frames; i += window)
+    {
+        printf("Sending frames: ");
+
+        for (j = i; j < i + window && j <= frames; j++)
+        {
+            printf("%d ", j);
+        }
+
+        printf("\nAcknowledgement received for frames: ");
+
+        for (j = i; j < i + window && j <= frames; j++)
+        {
+            printf("%d ", j);
+        }
+
+        printf("\nWindow slides forward.\n\n");
+    }
+
+    printf("All frames transmitted successfully.\n");
+
+    return 0;
+}
